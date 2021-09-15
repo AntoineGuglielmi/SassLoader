@@ -25,7 +25,7 @@ index.php
 ```
 
 
-In my `index.php` file, I'll put the following:  
+My `index.php` file would look like the following:  
 
 ```php
 // creating a new SassLoader object
