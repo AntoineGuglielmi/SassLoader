@@ -4,38 +4,49 @@ So I created SassLoader, a little and simple sass files caller which looks for a
 
 ---
 ## To install
-`composer require AntoineGuglielmi/SassLoader`
+```
+composer require AntoineGuglielmi/SassLoader
+```
 
 ## To use
 Let's assume that my project directories look like this:
-  - `public`
-    - `css`
-    - `sass`
-      - `tools`
-        - `_file01.sass`
-      - `_file02.sass`
-  - `src`
-    - `...`
-  - `vendor`
-    - `...`
-  - `index.php`
+```txt
+public
+-- css
+-- sass
+------ tools
+-------- `_file01.sass
+------ _file02.sass
+src
+-- ...
+vendor
+-- ...
+index.php
+```
+
 
 In my `index.php` file, I'll put the following:  
 
-`// creating a new SassLoader object`  
-`$sassloader = new SL\SassLoader('public/sass');`  
-`// setting 'public/sass/main.sass' as my drop point sass file, the one that will receive the "@import" rules`  
-`$sassloader->set_drop_point('main.sass');`  
-`// let's do the magic`  
-`$sassloader->load();  `
+```php
+// creating a new SassLoader object
+$sassloader = new SL\SassLoader('public/sass');
+// setting 'public/sass/main.sass' as my drop point sass file, the one that will receive the "@import" rules
+$sassloader->set_drop_point('main.sass');
+// let's do the magic
+$sassloader->load();
+```
 
 SassLoader will generate the `public/sass/main.sass` file which will look like the following:  
-`@import 'file02'`  
-`@import 'tools/file01'`  
+```sass
+@import 'file02'
+@import 'tools/file01'
+```
 
-All you have got to do is to run your sass command, and voilà !
+All you have to do is to run your sass command, and voilà !
 
-**Bonus: my sass bat file**  
-`if not DEFINED IS_MINIMIZED set IS_MINIMIZED=1 && start "" /min "%~dpnx0" %* && exit`  
-    `sass --watch public/sass:public/css --style expanded`  
-`exit`
+**More: my sass bat file**
+```bat
+if not DEFINED IS_MINIMIZED set IS_MINIMIZED=1 && start "" /min "%~dpnx0" %* && exit
+    sass --watch public/sass:public/css --style expanded
+exit
+```
