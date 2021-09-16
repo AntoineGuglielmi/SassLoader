@@ -1,7 +1,6 @@
 {
-    "require": {
-        
-    },
+    "name": "steampixel/simple-php-router",
+    "require": {},
     "autoload": {
         "psr-4": {
             "SL\\": "src/"
