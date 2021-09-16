@@ -1,5 +1,5 @@
 {
-    "name": "steampixel/simple-php-router",
+    "name": "antoineg/sassloader",
     "require": {},
     "autoload": {
         "psr-4": {
